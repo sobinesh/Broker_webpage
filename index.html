@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Listings</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-bar label {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        /* Property Listings */
+        .property-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .property-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            overflow: hidden; /* Ensure nothing overflows */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .property-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 200px; /* Consistent height */
+            object-fit: cover; /* Ensures the image is cropped to fit */
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .property-card h3 {
+            font-size: 20px;
+            padding: 15px 15px 0;
+            margin-bottom: 10px;
+        }
+
+        .property-card p {
+            font-size: 16px;
+            color: #555;
+            padding: 0 15px 15px;
+            margin-top: auto; /* Pushes the paragraph to the bottom */
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .property-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Real Estate Listings</h1>
+        <div class="search-bar">
+            <label for="propertyType">Filter by Property Type:</label>
+            <select id="propertyType">
+                <option value="all">All</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="villa">Villa</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="property-list" id="propertyList">
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Luxury Apartment in City Center</h3>
+            <p>Price: ₹50,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Cozy Family House in Suburbs</h3>
+            <p>Price: ₹35,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Beautiful Villa with Sea View</h3>
+            <p>Price: ₹1,20,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Modern Apartment near Park</h3>
+            <p>Price: ₹45,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Spacious House with Garden</h3>
+            <p>Price: ₹70,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Luxury Villa with Private Pool</h3>
+            <p>Price: ₹1,50,00,000</p>
+        </div>
+        <!-- 12 more cards added -->
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Luxury Apartment in City Center</h3>
+            <p>Price: ₹50,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Cozy Family House in Suburbs</h3>
+            <p>Price: ₹35,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Beautiful Villa with Sea View</h3>
+            <p>Price: ₹1,20,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Modern Apartment near Park</h3>
+            <p>Price: ₹45,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Spacious House with Garden</h3>
+            <p>Price: ₹70,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Luxury Villa with Private Pool</h3>
+            <p>Price: ₹1,50,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Luxury Apartment in City Center</h3>
+            <p>Price: ₹50,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Cozy Family House in Suburbs</h3>
+            <p>Price: ₹35,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Beautiful Villa with Sea View</h3>
+            <p>Price: ₹1,20,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Modern Apartment near Park</h3>
+            <p>Price: ₹45,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Spacious House with Garden</h3>
+            <p>Price: ₹70,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Luxury Villa with Private Pool</h3>
+            <p>Price: ₹1,50,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Luxury Apartment in City Center</h3>
+            <p>Price: ₹50,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Cozy Family House in Suburbs</h3>
+            <p>Price: ₹35,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Beautiful Villa with Sea View</h3>
+            <p>Price: ₹1,20,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Modern Apartment near Park</h3>
+            <p>Price: ₹45,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Spacious House with Garden</h3>
+            <p>Price: ₹70,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Luxury Villa with Private Pool</h3>
+            <p>Price: ₹1,50,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Stylish Apartment Downtown</h3>
+            <p>Price: ₹60,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Charming House near Lake</h3>
+            <p>Price: ₹40,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Modern Villa with Ocean View</h3>
+            <p>Price: ₹2,00,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Apartment with Balcony</h3>
+            <p>Price: ₹35,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Family House with Garage</h3>
+            <p>Price: ₹55,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Spacious Villa with Garden</h3>
+            <p>Price: ₹1,80,00,000</p>
+        </div>
+        <div class="property-card" data-type="apartment">
+            <img src="apartment.jpg" alt="Apartment">
+            <h3>Loft Apartment in City Center</h3>
+            <p>Price: ₹70,00,000</p>
+        </div>
+        <div class="property-card" data-type="house">
+            <img src="house.jpg" alt="House">
+            <h3>Modern Family House with Pool</h3>
+            <p>Price: ₹95,00,000</p>
+        </div>
+        <div class="property-card" data-type="villa">
+            <img src="villa.jpg" alt="Villa">
+            <h3>Exclusive Villa on Private Island</h3>
+            <p>Price: ₹3,50,00,000</p>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to handle filtering
+        const filterDropdown = document.getElementById('propertyType');
+        const propertyCards = document.querySelectorAll('.property-card');
+
+        filterDropdown.addEventListener('change', function() {
+            const selectedFilter = filterDropdown.value;
+            
+            // Loop through all the property cards
+            propertyCards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                
+                // Show all if "all" is selected
+                if (selectedFilter === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    // Otherwise show only cards that match the selected filter
+                    if (cardType === selectedFilter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
